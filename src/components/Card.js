@@ -1,12 +1,14 @@
+import "./Card.scss";
 const Card = () => {
   return (
-    <div>
-      <div className="relative py-3 sm:max-w-sm sm:mx-auto">
-        <div className="relative px-1 py-1 bg-white shadow-lg sm:rounded-2xl sm:p-3">
+    <div className="flex justify-center mt-9 pt-9">
+      <div className=" flex py-3 sm:max-w-sm sm:mx-auto">
+        <div className=" flex px-1 py-1 bg-white shadow-lg sm:rounded-2xl sm:p-3">
           <div className="max-w-md mx-auto">
             <div>
               <img
                 src="https://m.media-amazon.com/images/M/MV5BMjdkZjNjNDItYzc4MC00NTkxLTk1MWEtY2UyZjY5MjUwNDNkXkEyXkFqcGdeQXVyMTA1OTcyNDQ4._V1_UX182_CR0,0,182,268_AL_.jpg"
+                alt="img test"
                 className="w-full h-auto object-center m-auto sm:h-auto"
               />
             </div>

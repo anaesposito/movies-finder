@@ -8,9 +8,8 @@ const Nav = () => {
         <div className="max-w-7xl mx-auto px-8">
           <div className="flex items-center justify-between h-16">
             <div className=" flex items-center">
-              <Link className="flex-shrink-0">
-                <img className="h-8 w-8" src={movie} alt="movie clapperboard" />
-              </Link>
+              <img className="h-8 w-8" src={movie} alt="movie clapperboard" />
+
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
                   <Link
@@ -20,14 +19,14 @@ const Nav = () => {
                     Home
                   </Link>
                   <Link
-                    to="/realeses"
+                    to="/releases"
                     className="text-gray-300 dark:text-white   hover:text-white dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Releases
                   </Link>
                   <Link
                     to="/most-populars"
-                    className="text-gray-300   hover:text-white dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    className="text-gray-300  hover:text-white dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Most Populars
                   </Link>
