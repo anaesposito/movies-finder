@@ -3,9 +3,8 @@ import Slider from "react-slick";
 import CarouselContent from "./CarouselContent";
 import CarouselInfo from "./CarouselInfo";
 
-const Carousels = ({ imgId }) => {
-  let imgArray = imgId.slice(0, -15);
-  console.log(imgArray);
+const Carousels = ({ movieInfo }) => {
+  let imgArray = movieInfo.slice(0, -15);
 
   const settings = {
     dots: true,

@@ -5,7 +5,7 @@ import Releases from "./components/Releases";
 import Search from "./components/Search";
 import Nav from "./components/Nav";
 import Carousels from "./components/Carousels";
-import Card from "./components/Card";
+
 import { BrowserRouter, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 const App = () => {
@@ -21,17 +21,20 @@ const App = () => {
         console.log(data.results);
       });
   }, []);
-  // let carouselsImg = "";
 
   return (
     <BrowserRouter>
       <div className="bg-black max-w-auto mx-auto px-8">
         <Nav />
 
-        <div>
-          <Carousels imgId={latest} />
-        </div>
-        <Card className="mt-9 flex" />
+        <section>
+          <Carousels movieInfo={latest} />
+        </section>
+        <section>
+          <Populars movieInfo={latest} />
+          <Releases movieInfo={latest} />
+        </section>
+
         <Route path="/home" component={Home} />
         <Route path="/releases" component={Releases} />
         <Route path="/most-populars" component={Populars} />
