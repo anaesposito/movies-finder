@@ -19,15 +19,14 @@ const Carousels = ({ imgId }) => {
   };
 
   return (
-    <div className="w-auto" style={{ maxHeight: "500px" }}>
+    <div>
       <h2>Auto Play</h2>
 
-      <Slider className="w-auto " {...settings}>
+      <Slider className="relative " {...settings}>
         {imgArray.map((part) => (
           <React.Fragment key={part.id}>
-            <CarouselContent src={part.backdrop_path} />
-            <CarouselInfo
-              className=""
+            <CarouselContent
+              src={part.backdrop_path}
               movieId={part.id}
               title={part.title}
               overview={part.overview}
