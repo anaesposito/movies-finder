@@ -21,17 +21,17 @@ const App = () => {
         console.log(data.results);
       });
   }, []);
-  // let carouselsImg = "";
 
   return (
     <BrowserRouter>
       <div className="bg-black max-w-auto mx-auto px-8">
         <Nav />
 
-        <div>
+        <div className="">
           <Carousels imgId={latest} />
         </div>
         <Card className="mt-9 flex" />
+
         <Route path="/home" component={Home} />
         <Route path="/releases" component={Releases} />
         <Route path="/most-populars" component={Populars} />

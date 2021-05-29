@@ -13,8 +13,8 @@ const Carousels = ({ imgId }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 2000,
-    autoplaySpeed: 4000,
+    speed: 22000,
+    autoplaySpeed: 24000,
     cssEase: "linear",
   };
 
@@ -23,10 +23,11 @@ const Carousels = ({ imgId }) => {
       <h2>Auto Play</h2>
 
       <Slider className="w-auto " {...settings}>
-        {imgArray.map((part, index) => (
+        {imgArray.map((part) => (
           <React.Fragment key={part.id}>
-            <CarouselContent className="" src={part.backdrop_path} />
+            <CarouselContent src={part.backdrop_path} />
             <CarouselInfo
+              className=""
               movieId={part.id}
               title={part.title}
               overview={part.overview}

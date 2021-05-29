@@ -9,7 +9,7 @@ const Card = () => {
               <img
                 src="https://m.media-amazon.com/images/M/MV5BMjdkZjNjNDItYzc4MC00NTkxLTk1MWEtY2UyZjY5MjUwNDNkXkEyXkFqcGdeQXVyMTA1OTcyNDQ4._V1_UX182_CR0,0,182,268_AL_.jpg"
                 alt="img test"
-                className="w-full h-auto object-center m-auto sm:h-auto"
+                className="w-full h-auto object-center object-cover m-auto sm:h-auto"
               />
             </div>
             <div className="divide-y divide-gray-200">
