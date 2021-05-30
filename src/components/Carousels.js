@@ -5,7 +5,6 @@ import CarouselInfo from "./CarouselInfo";
 
 const Carousels = ({ movieInfo }) => {
   let imgArray = movieInfo.slice(0, -15);
-
   const settings = {
     dots: true,
     infinite: true,
@@ -22,7 +21,7 @@ const Carousels = ({ movieInfo }) => {
       <h2>Auto Play</h2>
 
       <Slider className="w-auto " {...settings}>
-        {imgArray.map((part, index) => (
+        {imgArray.map((part) => (
           <React.Fragment key={part.id}>
             <CarouselContent className="" src={part.backdrop_path} />
             <CarouselInfo
