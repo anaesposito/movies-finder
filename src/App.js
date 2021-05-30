@@ -1,6 +1,6 @@
 import "./App.css";
 import Home from "./components/Home";
-import Populars from "./components/Populars";
+import Populars from "./components/TopMovies";
 import Releases from "./components/Releases";
 import Search from "./components/Search";
 import Nav from "./components/Nav";
@@ -8,6 +8,7 @@ import Carousels from "./components/Carousels";
 
 import { BrowserRouter, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
+import TopMovies from "./components/TopMovies";
 const App = () => {
   const [latest, setLatest] = useState([]);
 
@@ -30,9 +31,10 @@ const App = () => {
         <section>
           <Carousels movieInfo={latest} />
         </section>
+
         <section>
-          <Populars movieInfo={latest} />
-          <Releases movieInfo={latest} />
+          <TopMovies movieInfo={latest} title="Most Populars Movies" />
+          <TopMovies movieInfo={latest} title="New Releases" />
         </section>
 
         <Route path="/home" component={Home} />

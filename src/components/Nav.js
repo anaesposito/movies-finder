@@ -1,4 +1,4 @@
-import movie from "./movie.png";
+import movie from "./img/movie.png";
 import { Link } from "react-router-dom";
 
 const Nav = () => {
