@@ -1,6 +1,6 @@
 import "./App.css";
 import Home from "./components/Home";
-import Populars from "./components/TopMovies";
+import TopMovies from "./components/TopMovies";
 import Releases from "./components/Releases";
 import Search from "./components/Search";
 import Nav from "./components/Nav";
@@ -14,7 +14,7 @@ const App = () => {
 
   useEffect(() => {
     fetch(
-      `https://api.themoviedb.org/3/movie/now_playing?api_key=eafc0da50e46a0fe474daa07b094c302`
+      `https://api.themoviedb.org/3/movie/${}?api_key=eafc0da50e46a0fe474daa07b094c302`
     )
       .then((res) => res.json())
       .then((data) => {
