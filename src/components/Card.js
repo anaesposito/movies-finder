@@ -1,8 +1,10 @@
 import "./Card.scss";
+// import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 const Card = ({ src, title, movieId }) => {
+  let movieInfo = movieId;
   return (
-    <Link to={`/${movieId}`}>
+    <Link to={`/movie/${movieInfo}`}>
       <div
         className="flex justify-center h-auto m-9 pt-2 transform hover:scale-110 motion-reduce:transform-none"
         style={{ width: "250px" }}
@@ -16,7 +18,7 @@ const Card = ({ src, title, movieId }) => {
               <div>
                 <img
                   src={`https://image.tmdb.org/t/p/original/${src}`}
-                  alt="img test"
+                  alt="img from the movie of the list"
                   className="w-full h-auto object-center object-cover m-auto sm:rounded-2xl sm:h-auto max-h-full"
                 />
               </div>

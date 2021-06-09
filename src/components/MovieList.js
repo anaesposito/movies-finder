@@ -4,7 +4,7 @@ import arrow from "./img/arrow.png";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const TopMovies = ({ title, type, landing }) => {
+const MovieList = ({ title, type, landing, length }) => {
   const [latest, setLatest] = useState([]);
 
   useEffect(() => {
@@ -16,21 +16,25 @@ const TopMovies = ({ title, type, landing }) => {
         setLatest(data.results);
       });
   }, [type]);
-  let imgArray = latest.slice(0, -10);
+  let imgArray = latest.slice(0, length);
 
   return (
     <div className="mt-9 pt-9">
-      <h1
-        className="text-white text-3xl
-        pt-6 font-bold flex"
-        style={{ marginLeft: "2%" }}
-      >
-        {title}
-        <Link to={`${landing}`}>
-          {" "}
-          <img className="pl-3" src={arrow} alt="see more" />
-        </Link>
-      </h1>
+      {landing !== false ? (
+        <h1
+          className="text-white text-3xl
+       pt-6 font-bold flex"
+          style={{ marginLeft: "2%" }}
+        >
+          {title}
+          <Link to={`${landing}`}>
+            {" "}
+            <img className="pl-3" src={arrow} alt="see more" />
+          </Link>
+        </h1>
+      ) : (
+        ""
+      )}{" "}
       <div className="flex flex-wrap justify-center ">
         {imgArray.map((part) => (
           <Card
@@ -44,4 +48,4 @@ const TopMovies = ({ title, type, landing }) => {
     </div>
   );
 };
-export default TopMovies;
+export default MovieList;

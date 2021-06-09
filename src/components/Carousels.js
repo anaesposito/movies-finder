@@ -17,7 +17,10 @@ const Carousels = ({ movieInfo }) => {
   };
 
   return (
-    <div className="w-auto" style={{ maxHeight: "500px" }}>
+    <div
+      className="bg-black max-w-auto mx-auto px-8"
+      style={{ maxHeight: "500px" }}
+    >
       <h2>Auto Play</h2>
 
       <Slider className="w-auto " {...settings}>

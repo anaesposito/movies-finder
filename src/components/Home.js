@@ -1,5 +1,7 @@
 import Carousels from "./Carousels";
-import TopMovies from "./TopMovies";
+import MovieList from "./MovieList";
+import Footer from "./Footer";
+
 import { useEffect, useState } from "react";
 
 const Home = () => {
@@ -16,19 +18,26 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className="bg-black">
       <section>
         <Carousels movieInfo={latest} />
       </section>
 
-      <section>
-        <TopMovies
+      <section className="max-w-auto mx-auto px-8">
+        <MovieList
           title="Most Populars Movies"
           type="popular"
           landing="/most-populars"
+          length="-10"
         />
-        <TopMovies title="New Releases" type="upcoming" landing="/releases" />
+        <MovieList
+          title="New Releases"
+          type="upcoming"
+          landing="/releases"
+          length="-10"
+        />
       </section>
+      <Footer />
     </div>
   );
 };
