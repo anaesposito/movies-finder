@@ -37,7 +37,6 @@ const Home = () => {
           length="-10"
         />
       </section>
-      <Footer />
     </div>
   );
 };

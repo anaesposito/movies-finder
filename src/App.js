@@ -5,6 +5,7 @@ import Populars from "./components/Populars";
 import Search from "./components/Search";
 import Nav from "./components/Nav";
 import Movie from "./components/Movie";
+import Footer from "./components/Footer";
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { BrowserView, MobileView } from "react-device-detect";
@@ -20,17 +21,17 @@ const App = () => {
         <MobileView>
           <SidenavPage />
         </MobileView>
-      </div>
 
-      <Route exact path="/movies-finder" component={Home} />
-      <Route exact path="/releases" component={Releases} />
-      <Route exact path="/most-populars" component={Populars} />
-      <Route exact path="/search" component={Search} />
-      {/* <Route path="/movie" component={Movie} />
-      <Route path="/movie" component={MovieInfo} /> */}
-      <Switch>
-        <Route path="/movie/:movieId" children={<Movie />} />
-      </Switch>
+        <Route exact path="/movies-finder" component={Home} />
+        <Route exact path="/releases" component={Releases} />
+        <Route exact path="/most-populars" component={Populars} />
+        <Route exact path="/search" component={Search} />
+
+        <Switch>
+          <Route path="/movie/:movieId" children={<Movie />} />
+        </Switch>
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 };
