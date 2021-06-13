@@ -1,10 +1,11 @@
 import "./Card.scss";
-// import { useParams } from "react-router-dom";
+import movie from "./img/movies.png";
 import { Link } from "react-router-dom";
+
 const Card = ({ src, title, movieId }) => {
-  let movieInfo = movieId;
+  // let movieInfo = movieId;
   return (
-    <Link to={`/movie/${movieInfo}`}>
+    <Link to={`/movie/${movieId}`}>
       <div
         className="flex justify-center h-auto m-9 pt-2 transform hover:scale-110 motion-reduce:transform-none"
         style={{ width: "250px" }}
@@ -16,11 +17,19 @@ const Card = ({ src, title, movieId }) => {
           >
             <div className="max-w-md mx-auto">
               <div>
-                <img
-                  src={`https://image.tmdb.org/t/p/original/${src}`}
-                  alt="img from the movie of the list"
-                  className="w-full h-auto object-center object-cover m-auto sm:rounded-2xl sm:h-auto max-h-full"
-                />
+                {src == null ? (
+                  <img
+                    className="w-full h-auto object-center object-cover m-auto sm:rounded-2xl sm:h-auto max-h-full"
+                    alt="loading"
+                    src={movie}
+                  />
+                ) : (
+                  <img
+                    src={`https://image.tmdb.org/t/p/original/${src}`}
+                    alt="img from the movie of the list"
+                    className="w-full h-auto object-center object-cover m-auto sm:rounded-2xl sm:h-auto max-h-full"
+                  />
+                )}
               </div>
               <div className="divide-y divide-gray-200">
                 <div className="py-2 text-base leading-6 space-y-2 text-white sm:text-lg sm:leading-7"></div>

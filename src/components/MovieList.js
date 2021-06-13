@@ -1,10 +1,7 @@
-import React from "react";
-import Card from "./Card";
-import arrow from "./img/arrow.png";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import MovieListDisplay from "./MovieListDisplay";
 
-const MovieList = ({ title, type, landing, length }) => {
+const MovieList = ({ type, length }) => {
   const [latest, setLatest] = useState([]);
 
   useEffect(() => {
@@ -13,39 +10,10 @@ const MovieList = ({ title, type, landing, length }) => {
     )
       .then((res) => res.json())
       .then((data) => {
-        setLatest(data.results);
+        setLatest(data.results.slice(0, length));
       });
-  }, [type]);
-  let imgArray = latest.slice(0, length);
+  }, [type, length]);
 
-  return (
-    <div className="mt-9 pt-9">
-      {landing !== false ? (
-        <h1
-          className="text-white text-3xl
-       pt-6 font-bold flex"
-          style={{ marginLeft: "2%" }}
-        >
-          {title}
-          <Link to={`${landing}`}>
-            {" "}
-            <img className="pl-3" src={arrow} alt="see more" />
-          </Link>
-        </h1>
-      ) : (
-        ""
-      )}{" "}
-      <div className="flex flex-wrap justify-center ">
-        {imgArray.map((part) => (
-          <Card
-            key={part.id}
-            src={part.poster_path}
-            title={part.title}
-            movieId={part.id}
-          />
-        ))}
-      </div>
-    </div>
-  );
+  return <MovieListDisplay imgArray={latest} />;
 };
 export default MovieList;

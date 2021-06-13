@@ -1,13 +1,22 @@
 import { useEffect, useRef, useState } from "react";
 import Portal from "@reach/portal";
 
-import { YoutubePlayer } from "reactjs-media";
 export const ModalPage = ({ movieId }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [videoURL, setVideoURL] = useState("");
   const toggle = () => {
     setIsOpen(!isOpen);
   };
+  const [isMobile, setIsMobile] = useState(false);
+
+  const handleResize = () => {
+    window.innerWidth < 720 ? setIsMobile(true) : setIsMobile(false);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize());
+  });
+
   useEffect(() => {
     fetch(
       `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=eafc0da50e46a0fe474daa07b094c302`
@@ -18,6 +27,8 @@ export const ModalPage = ({ movieId }) => {
       });
   }, [movieId]);
 
+  const widthVideo = isMobile ? "300" : "540";
+  const heightVideo = isMobile ? "220" : "540";
   return (
     <>
       <button
@@ -30,12 +41,16 @@ export const ModalPage = ({ movieId }) => {
       <Modal isOpen={isOpen} toggle={toggle}>
         <Modal.Header>Official Trailer</Modal.Header>
         <Modal.Body>
-          <YoutubePlayer
-            src={`https://www.youtube.com/watch?v=${videoURL}`}
-            allowFullScreen={true}
-            width={565}
-            height={318}
-          />
+          <iframe
+            title="youtube video"
+            id="ytplayer"
+            type="text/html"
+            width={widthVideo}
+            height={heightVideo}
+            src={`https://www.youtube.com/embed/${videoURL}?autoplay=1&cc_load_policy=1&enablejsapi=1&color=white&iv_load_policy=3`}
+          >
+            {" "}
+          </iframe>
         </Modal.Body>
 
         <Modal.Footer>

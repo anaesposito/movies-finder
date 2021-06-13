@@ -3,7 +3,7 @@ import MovieList from "./MovieList";
 const Populars = () => {
   return (
     <div className="bg-black w-screen h-auto pt-9">
-      <h1 className="text-6xl text-white font-bold text-center">
+      <h1 className="text-6xl sm:text-sm text-white font-bold text-center">
         Most Populars Movies
       </h1>
       <MovieList

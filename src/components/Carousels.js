@@ -2,6 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import CarouselContent from "./CarouselContent";
 import CarouselInfo from "./CarouselInfo";
+import { useState, useEffect } from "react";
 
 const Carousels = ({ movieInfo }) => {
   let imgArray = movieInfo.slice(0, -15);
@@ -11,10 +12,19 @@ const Carousels = ({ movieInfo }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 2000,
-    autoplaySpeed: 4000,
+    speed: 20000,
+    autoplaySpeed: 40000,
     cssEase: "linear",
   };
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  const handleResize = () => {
+    window.innerWidth > 1720 ? setIsDesktop(true) : setIsDesktop(false);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize());
+  });
 
   return (
     <div
@@ -23,15 +33,19 @@ const Carousels = ({ movieInfo }) => {
     >
       <h2>Auto Play</h2>
 
-      <Slider className="w-auto " {...settings}>
+      <Slider className="relative " {...settings}>
         {imgArray.map((part) => (
           <React.Fragment key={part.id}>
-            <CarouselContent className="" src={part.backdrop_path} />
-            <CarouselInfo
-              movieId={part.id}
-              title={part.title}
-              overview={part.overview}
-            />
+            <CarouselContent src={part.backdrop_path} />
+            {isDesktop ? (
+              <CarouselInfo
+                movieId={part.id}
+                title={part.title}
+                overview={part.overview}
+              />
+            ) : (
+              ""
+            )}
           </React.Fragment>
         ))}
       </Slider>

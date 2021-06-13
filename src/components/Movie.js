@@ -28,17 +28,17 @@ const Movie = () => {
 
   return (
     <div
-      className="bg-cover bg-center  w-screen h-screen"
+      className="bg-cover bg-center"
       style={{
         backgroundImage: `${movieBg}`,
       }}
     >
-      <div className=" bg-gray-900  bg-opacity-70 w-screen h-screen">
-        <div className="flex flex-row md:flex-nowrap sm:flex-wrap  text-white font-bold w-2/3 pt-16 justify-center m-auto">
+      <div className=" bg-gray-900  bg-opacity-70 w-full h-full flex flex-row  sm:flex-nowrap pt-9 pb-9">
+        <div className="flex flex-row flex-wrap sm:flex-nowrap  text-white font-bold w-2/3 sm:pt-16  justify-center text-center sm:text-justify m-auto">
           <img
             alt="poster of the movie"
             src={moviePic}
-            className="w-1/3 sm:w-1/2 h-auto p-9 object-center object-cover"
+            className="w-full sm:w-1/2 sm:p-10 h-auto object-center object-cover"
           />
           <div className="flex flex-col pt-9">
             <h1 className="font-bold text-3xl">{movieDetail.title} </h1>
