@@ -24,6 +24,7 @@ const Home = () => {
       </section>
 
       <section className="max-w-auto mx-auto ">
+      {/* no esta bien aca el h1 */}
         <h1
           className="text-white text-3xl
        pt-6 mt-16 font-bold flex"
@@ -34,6 +35,7 @@ const Home = () => {
             <img className="pl-3" src={arrow} alt="see more" />
           </Link>
         </h1>
+        {/* por que -10 aca para el slice? el modelo avanzado usa 5 */}
         <MovieList type="popular" landing="/most-populars" length="-10" />
 
         <h1

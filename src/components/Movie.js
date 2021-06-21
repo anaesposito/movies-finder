@@ -44,6 +44,7 @@ const Movie = () => {
             <h1 className="font-bold text-3xl">{movieDetail.title} </h1>
 
             <span className="text-lg font-bold">
+            {/* {movieDetail.release_date && movieDetail.release_date.slice(0, 4)} */}
               {movieDetail.release_date
                 ? movieDetail.release_date.slice(0, 4)
                 : ""}
@@ -55,6 +56,7 @@ const Movie = () => {
             {genres.map((part, i) => (
               <ul key={i}>
                 <li>
+                {/* {part.name && <p className="text-base font-normal">{part.name}</p>} */}
                   {part.name ? (
                     <p className="text-base font-normal">{part.name}</p>
                   ) : (

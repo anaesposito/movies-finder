@@ -15,6 +15,7 @@ export const ModalPage = ({ movieId }) => {
 
   useEffect(() => {
     window.addEventListener("resize", handleResize());
+    // misma observacion aca que en NavBar
   });
 
   useEffect(() => {
@@ -41,6 +42,7 @@ export const ModalPage = ({ movieId }) => {
       <Modal isOpen={isOpen} toggle={toggle}>
         <Modal.Header>Official Trailer</Modal.Header>
         <Modal.Body>
+        {/* bien! */}
           <iframe
             title="youtube video"
             id="ytplayer"
@@ -107,6 +109,9 @@ const Modal = ({ children, isOpen, toggle }) => {
 
     ref.current?.focus();
 
+    // No me vuelve loca esta solucion. estas accediendo al dom directamente, que es algo
+    // que justamente React evita. 
+    // Se podria hacer esto mismo con tailwind o con scss. 
     const html = document.documentElement;
 
     const overflow = html.style.overflow;
@@ -138,6 +143,12 @@ const Modal = ({ children, isOpen, toggle }) => {
   );
 };
 
+// Por que no usar directamente esto en el Modal? Porque declarar estos componentes?
+// No veo el sentido de usar children aca. 
+// Este parece codigo que no salio 100% de vos; y eso no esta mal a menos que no estes entendiendo
+// realmente lo que hace, y que ventajas y desventajas tiene usarlo. 
+// en este caso no veo ventajas, y una enorme desventaja: si no entendes bien lo que esta pasando aca, 
+// arreglar un bug puede ser muy dificil. 
 Modal.Header = ({ children }) => (
   <div className={style.header}>
     <h4 className={style.headerTitle}>{children}</h4>

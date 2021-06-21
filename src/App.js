@@ -20,6 +20,10 @@ const App = () => {
 
   useEffect(() => {
     window.addEventListener("resize", handleResize());
+  //   no es buena practica dejar un useEffect sin array de dependencias, ya que se va a ejecutar
+  //   cada vez que se re renderee tu componente
+  //   en este caso, si agregamos isMobile, anda como esperamos:
+  // }, [isMobile]);
   });
 
   return (

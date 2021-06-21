@@ -19,6 +19,7 @@ const Footer = () => {
           </a>
         </span>
       </p>
+      {/* cada uno de estos iconos deberia ser un componente */}
       <div className="flex flex-row justify-center sm:max-w-sm">
         <a href="https://www.linkedin.com/in/ana-esposito-5a875184/">
           <div className="m-9">

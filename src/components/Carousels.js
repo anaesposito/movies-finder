@@ -37,6 +37,7 @@ const Carousels = ({ movieInfo }) => {
         {imgArray.map((part) => (
           <React.Fragment key={part.id}>
             <CarouselContent src={part.backdrop_path} />
+            {/* short circuit aca */}
             {isDesktop ? (
               <CarouselInfo
                 movieId={part.id}

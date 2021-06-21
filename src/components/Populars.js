@@ -6,6 +6,7 @@ const Populars = () => {
       <h1 className="text-6xl sm:text-sm text-white font-bold text-center">
         Most Populars Movies
       </h1>
+
       <MovieList
         title="Most Populars Movies"
         type="popular"
