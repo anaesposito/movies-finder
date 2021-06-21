@@ -25,11 +25,14 @@ const SideBar = ({ isOpenSide }) => {
           </button>
         </div>
       </div>
+           {/* si no vas a retornar nada en la segunda condicion, mejor usar short-circuit: isOpen && <codigo> */}
       {isOpen ? (
         <div className="z-40 absolute ml-16 mt-14 ">
           <ul>
+          {/* Cada uno de estos LI podria ser un componente, eso ayudaria a que el codigo sea mas legible */}
             <li>
               <Link to="/movies-finder" onClick={handleClick}>
+              {/* un solo h1 por pagina!! los h1 no son elementos de menu, son el titulo mas importante de tu web! */}
                 <h1 className="text-white text-xl font-bold ">Home</h1>
               </Link>
             </li>

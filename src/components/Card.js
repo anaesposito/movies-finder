@@ -8,6 +8,9 @@ const Card = ({ src, title, movieId }) => {
     <Link to={`/movie/${movieId}`}>
       <div
         className="flex justify-center h-auto m-9 pt-2 transform hover:scale-110 motion-reduce:transform-none"
+        // o usas tailwind, o scss, pero agregar estilos directamente al html no es buena practica, 
+        // y mucho menos estilar de tres maneras distintas como en este caso
+        // https://tailwindcss.com/docs/width para setear width con tailwind
         style={{ width: "250px" }}
       >
         <div className=" flex py-3 sm:max-w-sm sm:mx-auto">
@@ -17,6 +20,7 @@ const Card = ({ src, title, movieId }) => {
           >
             <div className="max-w-md mx-auto">
               <div>
+              {/* preferi escribirlo asi: {!src ? ( */}
                 {src == null ? (
                   <img
                     className="w-full h-auto object-center object-cover m-auto sm:rounded-2xl sm:h-auto max-h-full"

@@ -13,6 +13,7 @@ const Search = () => {
     setUserSearch(searchValue);
   };
   const fetchAction = () => {
+    // esta funcion no deberia retornar el fetch, solo ejecutarlo 
     return fetch(
       `https://api.themoviedb.org/3/search/movie?api_key=eafc0da50e46a0fe474daa07b094c302&language=en-US&page=1&include_adult=false&query=${searchValue}`
     )
@@ -44,6 +45,7 @@ const Search = () => {
 
       {searchValue ? (
         <div>
+        {/* decime que es el ultimo h1 que voy a ver :( */}
           <h1 className="text-6xl text-white font-bold text-center">
             {" "}
             Results

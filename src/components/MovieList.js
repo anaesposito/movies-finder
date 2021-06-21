@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import MovieListDisplay from "./MovieListDisplay";
+import Releases from "./Releases";
 
 const MovieList = ({ type, length }) => {
+  // a este componente lo llaman tanto Popular como Releases, sin embargo el nombre de la variable
+  // da la impreson de que son los ultimos lanzamientos. Busca un nombre mas adecuado
   const [latest, setLatest] = useState([]);
 
   useEffect(() => {
